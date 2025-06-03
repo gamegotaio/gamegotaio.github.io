@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+  <title>Gota.io Client</title>
+  <link rel="icon" href="https://agar.io/img/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #191919;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      padding: 1rem;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    p.description {
+      color: #999;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in-out;
+      text-align: center;
+    }
+
+    .logo {
+      width: 150px;
+      border-radius: 16px;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .download-btn,
+    .donate-btn {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-btn {
+      background-color: #367ec2;
+      color: #fff;
+    }
+
+    .download-btn:hover {
+      background-color: #6fce66;
+      transform: translateY(-3px);
+    }
+
+    .donate-btn {
+      background-color: #ff4081;
+      color: #fff;
+    }
+
+    .donate-btn:hover {
+      background-color: #e91e63;
+      transform: translateY(-3px);
+    }
+
+    .cell {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: float infinite ease-in-out alternate;
+      z-index: 0;
+    }
+
+    .cell:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      background-color: #ff4d4d;
+      left: 10%;
+      top: 10%;
+      animation-duration: 6s;
+    }
+
+    .cell:nth-child(2) {
+      width: 80px;
+      height: 80px;
+      background-color: #4caf50;
+      left: 75%;
+      top: 40%;
+      animation-duration: 9s;
+    }
+    .cell:nth-child(3) {
+      width: 140px;
+      height: 140px;
+      background-color: #2196f3;
+      left: 30%;
+      top: 75%;
+      animation-duration: 11s;
+    }
+
+    .cell:nth-child(4) {
+      width: 50px;
+      height: 50px;
+      background-color: #ff9800;
+      left: 60%;
+      top: 20%;
+      animation-duration: 7s;
+    }
+
+    .cell:nth-child(5) {
+      width: 60px;
+      height: 60px;
+      background-color: #9c27b0;
+      left: 45%;
+      top: 12%;
+      animation-duration: 10s;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      color: #999;
+      font-size: 0.85rem;
+      text-align: center;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .socials img {
+      width: 24px;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .socials img:hover {
+      opacity: 1;
+    }
+
+    .donate-btn:hover {
+      background-color: #4caf50;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(-15px, 20px);
+      }
+
+      100% {
+        transform: translate(15px, -10px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+
+  <img src="./assets/logo.png" alt="Agar.io Logo" class="logo">
+
+  <h1>Gota.io</h1>
+  <p class="description">Download Agar.io For Windows</p>
+
+  <!-- دکمه‌ها -->
+  <div class="btn-group">
+    <button class="download-btn" onclick="downloadGame('x64')">Download For WinX64</button>
+    <button class=" download-btn" onclick="downloadGame('x32')">Download For WinX32</button>
+  </div>
+
+  <div class="footer">
+    <div>© 2025 Agar.io Client | official client</div>
+    <div class="socials">
+      <a href="https://www.instagram.com/agar.io">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Instagram">
+      </a>
+      <a href="https://x.com/agariogame">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+      </a>
+      <a href="https://discord.com/invite/agario">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Discord">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function downloadGame(version) {
+      const link = version === 'x64'
+        ? './download/agario.exe'
+        : './download/agario.exe';
+      window.location.href = link;
+    }
+    function copyWallet() {
+      const wallet = "UQCqpRyYEX22UGmGILvmoH2rirQC8XywyY5ZIKTkA_cnPXuu";
+      const buttons = document.getElementsByClassName("donate-btn");
+
+      navigator.clipboard.writeText(wallet).then(() => {
+        for (let btn of buttons) {
+          btn.innerHTML = "Copied";
+        }
+
+        setTimeout(() => {
+          for (let btn of buttons) {
+            btn.innerHTML = "Donate Us";
+          }
+        }, 750);
+      }).catch(err => {
+        console.error("Failed to copy wallet address:", err);
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>
